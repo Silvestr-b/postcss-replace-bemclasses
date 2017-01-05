@@ -59,6 +59,7 @@ describe('postcss-replace-bemclasses', () => {
 	after(() => {
 		deleteFile()
 	})
+	
 })
 
 
