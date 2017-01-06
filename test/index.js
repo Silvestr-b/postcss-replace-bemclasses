@@ -30,8 +30,12 @@ describe('postcss-replace-bemclasses', () => {
 		})
 
 		it('если у нового значения класса нет точки, то при вставке точка добавится', () => {
-		    return run(p().withoutDot.input, p().withoutDot.output, p().withoutDot.json, options)
-		})    
+		    return run(p().valWithoutDot.input, p().valWithoutDot.output, p().valWithoutDot.json, options)
+		})
+
+		it('если у старого значения класса нет точки, то при поиске он ее подставит', () => {
+		    return run(p().propWithoutDot.input, p().propWithoutDot.output, p().propWithoutDot.json, options)
+		})     
 			
 	})
 
@@ -95,11 +99,18 @@ function p(){
 		        ".button": ".btn"
 		    }
 		},
-		withoutDot: { 
+		valWithoutDot: { 
 			input: '.button {}',
 			output: '.btn {}',
 			json: {
 		        ".button": "btn"
+		    }
+		},
+		propWithoutDot: { 
+			input: '.button {}',
+			output: '.btn {}',
+			json: {
+		        "button": ".btn"
 		    }
 		},
 		emptyJSON: { 

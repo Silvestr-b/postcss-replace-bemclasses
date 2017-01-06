@@ -15,11 +15,12 @@ module.exports = postcss.plugin('postcss-reverse-props', (options = {}) => {
 	return root => {
 		root.walkRules(rule => {
 			(rule.selector.match(/\.[a-z0-9\-\_]+/gi) || []).forEach(cls => {
-				if(!classes[cls]) return  
+				const newClass = classes[cls] || classes[cls.slice(1)] 
 
-              	const newClass = classes[cls][0] === '.'? classes[cls] : '.' + classes[cls];
+				if(!newClass) return  
               	
-            	rule.selector = rule.selector.replace(cls, newClass)
+            	rule.selector = rule.selector.replace(cls, newClass[0] === '.'? newClass : '.' + newClass)
+
             })
 		});
 	};
