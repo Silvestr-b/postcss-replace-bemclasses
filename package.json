@@ -1,0 +1,33 @@
+{
+  "name": "postcss-replace-bemclasses",
+  "version": "0.1.0",
+  "description": "",
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "bem",
+    "bem-classes",
+    "css",
+    "optimization"
+  ],
+  "author": "Silvestr Baibuz <silvestr-b@yandex.ru>",
+  "license": "MIT",
+  "repository": "Silvestr-b/postcss-replace-bemclasses",
+  "bugs": {
+    "url": "https://github.com/Silvestr-b/postcss-replace-bemclasses/issues"
+  },
+  "homepage": "https://github.com/Silvestr-b/postcss-replace-bemclasses",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "fs-extra": "^1.0.0",
+    "postcss": "^5.2.8"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
+}
