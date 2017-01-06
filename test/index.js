@@ -59,7 +59,7 @@ describe('postcss-replace-bemclasses', () => {
 	after(() => {
 		deleteFile()
 	})
-	
+
 })
 
 
@@ -121,6 +121,7 @@ function createFile(obj){
 	fs.ensureFileSync(pathToFile);
 	fs.writeFileSync(pathToFile, JSON.stringify(obj));
 }
+
 function deleteFile(){
 	fs.removeSync(path.parse(pathToFile).dir);
 }
